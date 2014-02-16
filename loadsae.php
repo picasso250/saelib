@@ -1,5 +1,22 @@
 <?php
 
+// storage
+define( 'SAE_STOREHOST', 'http://stor.sae.sina.com.cn/storageApi.php' );
+define('SAE_STORAGE_STORAGE_DIR',$SAEStorage.DIRECTORY_SEPARATOR.'storage'); //ccc
+define('VCODE_HOST','127.0.0.1:'.HTTP_PORT.'/sae/vcode.php') ;
+define('XHPROF_HOST', '/vendor/xhprof/xhprof_html/index.php') ;
+define('STORAGE_HOST','127.0.0.1:'.HTTP_PORT.'/storage') ;
+
+define('SAE_MYSQL_DB', 'app_'.$_SERVER['HTTP_APPNAME']);
+
+define('SAE_TMP_PATH', $SAEStorage.DIRECTORY_SEPARATOR.'tempstorage';
+
+define( 'SAE_APPNAME', $_SERVER['HTTP_APPNAME'] );
+define( 'SAE_APPVERSION', $_SERVER['HTTP_APPVERSION']);
+define('SAE_ACCESSKEY', 'sae');
+define('SAE_SECRETKEY', 'sae');
+
+
 define('SAE_ACCESSKEY', 'sae');
 define('SAE_SECRETKEY', 'sae');
 
@@ -90,4 +107,31 @@ function get_appname()
 function get_app_version()
 {
   return $_SERVER['HTTP_APPVERSION'] ;
+}
+
+function sae_xhprof_start()
+{
+    xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
+}
+
+function sae_xhprof_end()
+{
+    $xhprof_data = xhprof_disable();
+    $appname = get_appname() ;
+    $XHPROF_ROOT = __DIR__ .'/vendor/xhprof';
+    include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_lib.php";
+    include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_runs.php";
+    $xhprof_runs = new XHProfRuns_Default();
+    
+    // save raw data for this profiler run using default
+    // implementation of iXHProfRuns.
+    $xhprof_runs = new XHProfRuns_Default();
+
+    // save the run under a namespace "appname"
+    $run_id = $xhprof_runs->save_run($xhprof_data, $appname);
+    echo "---------------\n".
+     "Assuming you have set up the http based UI for \n".
+     "XHProf at some address, you can view run at \n".
+     "<a href=\"http://".XHPROF_HOST."?run=$run_id&source=$appname\">http://".XHPROF_HOST."?run=$run_id&source=$appname</a> \n".
+     "---------------\n";
 }
