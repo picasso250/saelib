@@ -3,9 +3,9 @@ saelib
 
 SAE SDK on Linux/Windows/Mac
 
-鉴于新浪官方一直都没提供 Linux 版本。
+鉴于新浪官方一直都没提供 **Linux** 版本。所以我做了个 Linux 版。
 
-[新浪官方Windows版](http://sae.sina.com.cn/?m=devcenter&catId=231)
+不过，如果想要更多的功能，请去下载 [SAE SDK 官方Windows版](http://sae.sina.com.cn/?m=devcenter&catId=231)
 
 usage
 ------
