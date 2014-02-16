@@ -2,9 +2,10 @@
 
 require __DIR__.'/autoload.php';
 
+sae_xhprof_start();
+
 $c = new SaeCounter();
 $c->create('c1',20);
-
 
 $name = 'xxx';
 $key = 'yyy';
@@ -49,3 +50,7 @@ $sr=new SaeRank();
 $ret=$sr->create($name,100,60*24*7);
 if($ret===false)
     var_dump($sr->errno(),$sr->errmsg());
+
+echo "do something<br>";
+get_appname();
+sae_xhprof_end();

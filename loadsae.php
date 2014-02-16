@@ -6,7 +6,7 @@ $SAEStorage = realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'sto
 define( 'SAE_STOREHOST', 'http://stor.sae.sina.com.cn/storageApi.php' );
 define('SAE_STORAGE_STORAGE_DIR',$SAEStorage.DIRECTORY_SEPARATOR.'storage'); //ccc
 define('VCODE_HOST','127.0.0.1:'.HTTP_PORT.'/sae/vcode.php') ;
-define('XHPROF_HOST', '/vendor/xhprof/xhprof_html/index.php') ;
+define('XHPROF_HOST', '/vendor/facebook/xhprof/xhprof_html/index.php') ;
 define('STORAGE_HOST','127.0.0.1:'.HTTP_PORT.'/storage') ;
 
 define('SAE_TMP_PATH', $SAEStorage.DIRECTORY_SEPARATOR.'tempstorage');
@@ -41,7 +41,7 @@ define("SAE_Expanded",7);
 define("SAE_ExtraExpanded",8);
 define("SAE_UltraExpanded",9);
 
-$_SERVER['DOCUMENT_ROOT'] = trim($_SERVER['DOCUMENT_ROOT']).DIRECTORY_SEPARATOR.$_SERVER['HTTP_APPNAME'].DIRECTORY_SEPARATOR.$_SERVER['HTTP_APPVERSION'] ;
+$_SERVER['DOCUMENT_ROOT'] = trim($_SERVER['DOCUMENT_ROOT']).DIRECTORY_SEPARATOR.SAE_APPNAME.DIRECTORY_SEPARATOR.SAE_APPVERSION;
 
 // font style
 define("SAE_Italic",2);
@@ -142,10 +142,9 @@ function sae_xhprof_end()
 {
     $xhprof_data = xhprof_disable();
     $appname = get_appname() ;
-    $XHPROF_ROOT = __DIR__ .'/vendor/xhprof';
+    $XHPROF_ROOT = __DIR__ .'/vendor/facebook/xhprof';
     include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_lib.php";
     include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_runs.php";
-    $xhprof_runs = new XHProfRuns_Default();
     
     // save raw data for this profiler run using default
     // implementation of iXHProfRuns.
@@ -156,6 +155,6 @@ function sae_xhprof_end()
     echo "---------------\n".
      "Assuming you have set up the http based UI for \n".
      "XHProf at some address, you can view run at \n".
-     "<a href=\"http://".XHPROF_HOST."?run=$run_id&source=$appname\">http://".XHPROF_HOST."?run=$run_id&source=$appname</a> \n".
+     "<a href=\"".XHPROF_HOST."?run=$run_id&source=$appname\">".XHPROF_HOST."?run=$run_id&source=$appname</a> \n".
      "---------------\n";
 }
