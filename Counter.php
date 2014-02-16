@@ -81,7 +81,6 @@ class SaeCounter extends SaeObject
     {
         if($this->redis)
         {
-            $this->redis->close() ;
             $this->redis = NULL ;
         }
     }
@@ -406,6 +405,6 @@ class SaeCounter extends SaeObject
     
     private function get_appname()
     {
-        return $_SERVER['HTTP_APPNAME'] ;
+        return SAE_APPNAME;
     }
 }

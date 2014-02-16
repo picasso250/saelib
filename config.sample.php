@@ -12,3 +12,6 @@ define('HTTP_PORT','80') ;
 define('HTTPS_PORT','443') ;
 define('REDIS_HOST','127.0.0.1') ;
 define('REDIS_PORT','6379') ;
+
+define('SAE_APPNAME', 'myapp');
+define('SAE_APPVERSION', 1);

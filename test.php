@@ -6,6 +6,9 @@ $c = new SaeCounter();
 $c->create('c1',20);
 
 
+$name = 'xxx';
+$key = 'yyy';
+$value = 42;
 // 用户在代码中创建排行榜：
 $sr=new SaeRank();
 $ret=$sr->create($name,100);

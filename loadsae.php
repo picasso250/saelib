@@ -1,5 +1,7 @@
 <?php
 
+$SAEStorage = realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'storage') ;
+
 // storage
 define( 'SAE_STOREHOST', 'http://stor.sae.sina.com.cn/storageApi.php' );
 define('SAE_STORAGE_STORAGE_DIR',$SAEStorage.DIRECTORY_SEPARATOR.'storage'); //ccc
@@ -7,18 +9,11 @@ define('VCODE_HOST','127.0.0.1:'.HTTP_PORT.'/sae/vcode.php') ;
 define('XHPROF_HOST', '/vendor/xhprof/xhprof_html/index.php') ;
 define('STORAGE_HOST','127.0.0.1:'.HTTP_PORT.'/storage') ;
 
-define('SAE_MYSQL_DB', 'app_'.$_SERVER['HTTP_APPNAME']);
-
-define('SAE_TMP_PATH', $SAEStorage.DIRECTORY_SEPARATOR.'tempstorage';
-
-define( 'SAE_APPNAME', $_SERVER['HTTP_APPNAME'] );
-define( 'SAE_APPVERSION', $_SERVER['HTTP_APPVERSION']);
-define('SAE_ACCESSKEY', 'sae');
-define('SAE_SECRETKEY', 'sae');
-
+define('SAE_TMP_PATH', $SAEStorage.DIRECTORY_SEPARATOR.'tempstorage');
 
 define('SAE_ACCESSKEY', 'sae');
 define('SAE_SECRETKEY', 'sae');
+
 
 // font style
 define("SAE_Italic",2);
@@ -99,15 +94,6 @@ interface SaeInterface
   public function setAuth( $akey , $skey );
 }
 
-function get_appname()
-{
-  return $_SERVER['HTTP_APPNAME'] ;
-}
-
-function get_app_version()
-{
-  return $_SERVER['HTTP_APPVERSION'] ;
-}
 
 function sae_xhprof_start()
 {

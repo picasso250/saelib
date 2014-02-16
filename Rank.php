@@ -78,7 +78,6 @@ class SaeRank extends SaeObject
     {
         if($this->redis)
         {
-            $this->redis->close() ;
             $this->redis = NULL ;
         }
     }
@@ -474,7 +473,7 @@ class SaeRank extends SaeObject
         if($posend == false)
             return NULL ;
         return substr($path,1,$posend-1) ;*/
-        return $_SERVER['HTTP_APPNAME'] ;
+        return SAE_APPNAME;
     }
     
     private function getNomalKey($uKey)
