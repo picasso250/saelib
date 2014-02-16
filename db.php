@@ -9,7 +9,7 @@ function db()
         return $db;
     }
 
-    $dsn = 'mysql:'
+    $dsn = 'mysql:';
     $arr[] = 'host='.SAE_LIB_MYSQL_HOST;
 
     if (defined('SAE_LIB_MYSQL_PORT')) {
