@@ -13,7 +13,8 @@ require 'saelib/autoload.php';
 if no redis or xhprof, please run
 
 ```bash
-composer install
+composer update
+apt-get install redis-server
 ```
 
 if xhprof has not been installed, please install it first.
