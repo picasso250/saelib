@@ -18,3 +18,7 @@ apt-get install redis-server
 ```
 
 if xhprof has not been installed, please install it first.
+
+difference
+-----------
+there is no `$_SERVER['HTTP_APPNAME']`, but there is a constant `SAE_APPNAME`;

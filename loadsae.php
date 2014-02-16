@@ -14,6 +14,34 @@ define('SAE_TMP_PATH', $SAEStorage.DIRECTORY_SEPARATOR.'tempstorage');
 define('SAE_ACCESSKEY', 'sae');
 define('SAE_SECRETKEY', 'sae');
 
+//$_SERVER['HTTP_HOST'] = $_SERVER['HTTP_APPNAME'].".sinaapp.com" ; 
+
+
+// gravity define
+define("SAE_NorthWest", 1);
+define("SAE_North", 2);
+define("SAE_NorthEast",3);
+define("SAE_East",6);
+define("SAE_SouthEast",9);
+define("SAE_South",8);
+define("SAE_SouthWest",7);
+define("SAE_West",4);
+define("SAE_Static",10);
+define("SAE_Center",5);
+
+// font stretch
+define("SAE_Undefined",0);
+define("SAE_Normal",1);
+define("SAE_UltraCondensed",2);
+define("SAE_ExtraCondensed",3);
+define("SAE_Condensed",4);
+define("SAE_SemiCondensed",5);
+define("SAE_SemiExpanded",6);
+define("SAE_Expanded",7);
+define("SAE_ExtraExpanded",8);
+define("SAE_UltraExpanded",9);
+
+$_SERVER['DOCUMENT_ROOT'] = trim($_SERVER['DOCUMENT_ROOT']).DIRECTORY_SEPARATOR.$_SERVER['HTTP_APPNAME'].DIRECTORY_SEPARATOR.$_SERVER['HTTP_APPVERSION'] ;
 
 // font style
 define("SAE_Italic",2);
@@ -53,6 +81,7 @@ define('SAE_Font_Sun',__DIR__.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR.'w
 define('SAE_Font_Kai',__DIR__.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR.'wqy-zenhei.ttc');
 define('SAE_Font_Hei', __DIR__.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR.'wqy-zenhei.ttc');
 define('SAE_Font_MicroHei',__DIR__.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR.'wqy-zenhei.ttc');
+
 
 /**
  * Sae基类
@@ -94,6 +123,15 @@ interface SaeInterface
   public function setAuth( $akey , $skey );
 }
 
+function get_appname()
+{
+  return SAE_APPNAME;
+}
+
+function get_app_version()
+{
+  return SAE_APPVERSION;
+}
 
 function sae_xhprof_start()
 {
