@@ -1,7 +1,9 @@
 saelib
 ======
 
-sae sdk on linux/window/mac
+SAE SDK on Linux/Windows/Mac
+
+新浪官方一直都没提供 Linux 版本的。
 
 usage
 ------
@@ -15,11 +17,13 @@ composer update
 
 3. use it!
 ```php
-require 'saelib/autoload.php';
+if (!isset($_SERVER['HTTP_APPNAME'])) {
+    require 'saelib/autoload.php';
+}
 ```
 
-dependencis
------------
+dependencies
+------------
 
 if no **redis** installed, please install it.
 
@@ -34,6 +38,11 @@ difference
 
 there is no `$_SERVER['HTTP_APPNAME']`, so this could be used to tell which env are you in.
 if you want to know the app's name, use constant `SAE_APPNAME`;
+
+for example
+```php
+$mem_root = isset($_SERVER['HTTP_APPNAME']) ? 'saemc://' : __DIR__.'/memcache_dir';
+```
 
 FAQ
 ------
