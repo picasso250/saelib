@@ -42,3 +42,52 @@ define('SAE_Font_Kai',__DIR__.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR.'w
 define('SAE_Font_Hei', __DIR__.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR.'wqy-zenhei.ttc');
 define('SAE_Font_MicroHei',__DIR__.DIRECTORY_SEPARATOR.'fonts'.DIRECTORY_SEPARATOR.'wqy-zenhei.ttc');
 
+/**
+ * Sae基类
+ * 
+ * STDLib的所有class都应该继承本class,并实现SaeInterface接口  
+ *
+ * @author Easychen <easychen@gmail.com>
+ * @version $Id$
+ * @package sae
+ * @ignore
+ */
+/**
+ * SaeObject
+ *
+ * @package sae
+ * @ignore
+ */
+
+
+abstract class SaeObject implements SaeInterface
+{
+  function __construct()
+  {
+    // 
+  }
+}
+/**
+ * SaeInterface , public interface of all sae client apis
+ *
+ * all sae client classes must implement these method for setting accesskey and secretkey , getting error infomation.
+ * @package sae
+ * @ignore
+ **/
+
+interface SaeInterface
+{
+  public function errmsg();
+  public function errno();
+  public function setAuth( $akey , $skey );
+}
+
+function get_appname()
+{
+  return $_SERVER['HTTP_APPNAME'] ;
+}
+
+function get_app_version()
+{
+  return $_SERVER['HTTP_APPVERSION'] ;
+}

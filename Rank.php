@@ -137,8 +137,12 @@ class SaeRank extends SaeObject
      */
     function create($namespace, $number, $expire=0)
     {
-        $this->redis = new Redis() ;
-        if(!$this->redis->connect(REDIS_HOST,REDIS_PORT))
+        $this->redis = new \Predis\Client(array(
+            'scheme' => 'tcp',
+            'host'   => REDIS_HOST,
+            'port'   => REDIS_PORT,
+        )) ;
+        if(!$this->redis)
         {
             return false ;
         }
