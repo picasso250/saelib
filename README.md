@@ -6,18 +6,28 @@ sae sdk on linux/window/mac
 usage
 ------
 
+1. copy `config.sample.php` to `config.php`
+
+2. install dependencies
+```bash
+composer update
+```
+
+3. use it!
 ```php
 require 'saelib/autoload.php';
 ```
 
-if no redis or xhprof, please run
+dependencis
+-----------
+
+if no **redis** installed, please install it.
 
 ```bash
-composer update
 apt-get install redis-server
 ```
 
-if xhprof has not been installed, please install it first.
+if **xhprof** has not been installed, please install it.
 
 difference
 -----------
