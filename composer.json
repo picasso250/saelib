@@ -1,0 +1,6 @@
+{
+    "require": {
+        "predis/predis": "v0.8.5",
+        "facebook/xhprof": "dev-master"
+    }
+}
