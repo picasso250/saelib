@@ -35,7 +35,7 @@ apt-get install redis-server
 
 if **xhprof** has not been installed, please install it.
 
-difference
+简介
 -----------
 
 there is no `$_SERVER['HTTP_APPNAME']`, so this could be used to tell which env are you in.
@@ -54,6 +54,15 @@ $mem_root = isset($_SERVER['HTTP_APPNAME']) ? 'saemc://' : __DIR__.'/memcache_di
 
 请使用wrapper，这也是兼容性比较好的方式。判断本地和服务器环境的方法请参考上面。
 
+但是，如果你有pr，我也接受。
+
+已经实现的功能如下：
+
+- Counter
+- Rank
+
+这两者都是源自 sae win 的代码。
+
 FAQ
 ------
 
@@ -64,3 +73,8 @@ A:
 mkdir /tmp/xhprof
 chmod 777 /tmp/xhprof
 ```
+
+todo
+-----
+
+- Channel
