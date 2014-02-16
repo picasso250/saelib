@@ -6,7 +6,6 @@ $SAEStorage = realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'sto
 define( 'SAE_STOREHOST', 'http://stor.sae.sina.com.cn/storageApi.php' );
 define('SAE_STORAGE_STORAGE_DIR',$SAEStorage.DIRECTORY_SEPARATOR.'storage'); //ccc
 define('VCODE_HOST','127.0.0.1:'.HTTP_PORT.'/sae/vcode.php') ;
-define('XHPROF_HOST', '/vendor/facebook/xhprof/xhprof_html/index.php') ;
 define('STORAGE_HOST','127.0.0.1:'.HTTP_PORT.'/storage') ;
 
 define('SAE_TMP_PATH', $SAEStorage.DIRECTORY_SEPARATOR.'tempstorage');
@@ -155,6 +154,6 @@ function sae_xhprof_end()
     echo "---------------\n".
      "Assuming you have set up the http based UI for \n".
      "XHProf at some address, you can view run at \n".
-     "<a href=\"".XHPROF_HOST."?run=$run_id&source=$appname\">".XHPROF_HOST."?run=$run_id&source=$appname</a> \n".
+     "<a href=\"http://".XHPROF_HOST."?run=$run_id&source=$appname\">http://".XHPROF_HOST."?run=$run_id&source=$appname</a> \n".
      "---------------\n";
 }

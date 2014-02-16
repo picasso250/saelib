@@ -15,3 +15,4 @@ define('REDIS_PORT','6379') ;
 
 define('SAE_APPNAME', 'myapp');
 define('SAE_APPVERSION', 1);
+define('XHPROF_HOST', '127.0.0.1:'.'/saelib/vendor/facebook/xhprof/xhprof_html/index.php');
