@@ -141,7 +141,7 @@ class SaeRank extends SaeObject
             'scheme' => 'tcp',
             'host'   => REDIS_HOST,
             'port'   => REDIS_PORT,
-        )) ;
+        ));
         if(!$this->redis)
         {
             return false ;
