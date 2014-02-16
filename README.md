@@ -3,7 +3,7 @@ saelib
 
 SAE SDK on Linux/Windows/Mac
 
-新浪官方一直都没提供 Linux 版本的。
+鉴于新浪官方一直都没提供 Linux 版本。
 
 [新浪官方Windows版](http://sae.sina.com.cn/?m=devcenter&catId=231)
 
@@ -13,16 +13,16 @@ usage
 1. copy `config.sample.php` to `config.php`
 
 2. install dependencies
-```bash
-composer update
-```
+ ```bash
+ composer update
+ ```
 
 3. use it!
-```php
-if (!isset($_SERVER['HTTP_APPNAME'])) {
-    require 'saelib/autoload.php';
-}
-```
+ ```php
+ if (!isset($_SERVER['HTTP_APPNAME'])) {
+     require 'saelib/autoload.php';
+ }
+ ```
 
 dependencies
 ------------
